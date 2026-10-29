@@ -1,0 +1,42 @@
+{
+  "name": "tableflow",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "smoke": "node scripts/smoke.mjs",
+    "ui-check": "node scripts/ui-check.mjs",
+    "db:setup": "node scripts/dev-db/migrate.mjs && node scripts/dev-db/seed.mjs",
+    "db:reset": "node scripts/dev-db/reset.mjs",
+    "db:migrate": "node scripts/dev-db/migrate.mjs",
+    "db:seed": "node scripts/dev-db/seed.mjs"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.5.10",
+    "next": "^15.5.4",
+    "pg": "^8.16.3",
+    "qrcode": "^1.5.4",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "@types/pg": "^8.15.4",
+    "@types/qrcode": "^1.5.5",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "eslint": "^9.33.0",
+    "eslint-config-next": "^15.5.4",
+    "playwright": "^1.64.1",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}
