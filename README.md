@@ -17,7 +17,7 @@ built yet.
 
 ## Quick start
 
-Requirements: Node 20+, npm, and (for the browser check) Google Chrome.
+Requirements: Node 20+, npm, and (for the browser check) Chromium.
 
 ```bash
 npm install
@@ -37,7 +37,7 @@ Seeded demo data:
 | Manager | `manager@tableflow.test` / `tableflow123` |
 | Wait staff | `waiter@tableflow.test` / `tableflow123` |
 | Kitchen | `kitchen@tableflow.test` / `tableflow123` |
-| Table 4 menu | `/t/devqr-mama-njeris-table-04-9f3a2b1c` |
+| Table 4 menu | generated at seed time; see seed output for the exact `/t/<token>` link |
 | Tablet variant | same URL with `?source=tablet` |
 
 The seed also creates a second restaurant (`Rival Cafe`) so cross-tenant isolation can be checked
@@ -89,7 +89,7 @@ by hand.
 | Owner / manager | read | full valid matrix | manage | manage (manager cannot touch owners) | yes |
 | Wait staff | read | accept, prepare→ready→served→completed, cancel new orders | no | no | yes |
 | Kitchen | read | accepted→preparing, preparing→ready | no | no | no |
-| Cashier | — (payments arrive in Stage 5) | no | no | no | — |
+| Cashier | read | same order-level transitions as wait staff (prices hidden) | no | no | no |
 
 ## Development database
 
